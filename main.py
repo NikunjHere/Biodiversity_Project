@@ -2,8 +2,14 @@
 from sklearn import tree
 import pandas as pd
 
+animal_input = float(input('Enter the Ear Size, Body Size, Eyes Size and Heart Length of the animal using \',\' in between each data entry: '))
+plant_input = float(input('Enter the Stem Width, Stem Length, Root Length and Leaf Size of the plant using \',\' in between each data entry: '))
+
 # Sample dataset: Features of different species (e.g., size, color, habitat)
 # Replace this with your actual data
+
+print('Biodiversity includes range of species that live in an area.')
+
 data = {
     'Ear Size': [2.4, 0.13, 4.0],
     'Body Size': [27.0, 2.0, 4.2],
@@ -33,8 +39,8 @@ def predict_species(new_features):
 
 # Example usage of the function
 # Replace the list with actual features to get the species prediction
-example_features = [2.4, 27.0, 0.17, 1.5]  # Example feature set
-print('The predicted species is: ',predict_species(example_features))
+example_features = [animal_input]  # Example feature set
+print('The predicted Endangered Animals is: ',predict_species(example_features))
 
 plants_data = {
     'Stem Width': [0.6, 0.05, 0.7],
@@ -64,5 +70,5 @@ def predict_plant(new_plant):
 
 # Example usage of the function
 # Replace the list with actual features to get the species prediction
-example_plants = [0.05, 2.2, 1.5, 0.4]  # Example feature set
+example_plants = [plant_input]  # Example feature set
 print('The predicted Endangered Plant is: ',predict_plant(example_plants))
