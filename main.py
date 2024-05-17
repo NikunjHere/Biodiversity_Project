@@ -1,10 +1,9 @@
-# Import necessary libraries
+from flask import Flask, jsonify, request, render_template
 from sklearn import tree
 import pandas as pd
 
-# Sample dataset: Features of different species (e.g., size, color, habitat)
-# Replace this with your actual data
-
+app = Flask(__name__)
+classifier = tree.DecisionTreeClassifier()
 print('Biodiversity includes range of species that live in an area.')
 
 data = {
@@ -15,57 +14,49 @@ data = {
     'Endangered Animals': ['Blue Whale', 'White Tailed Deer', 'Black Rhinos']
 }
 
-# Convert the dictionary to a pandas DataFrame
 df = pd.DataFrame(data)
 
-# Define the features and the target variable
-features = df[['Ear Size', 'Body Size', 'Eyes Size', 'Heart Length']]
+data_features = df[['Ear Size', 'Body Size', 'Eyes Size', 'Heart Length']]
 target = df['Endangered Animals']
 
-# Initialize the decision tree classifier
-classifier = tree.DecisionTreeClassifier()
+classifier.fit(data_features, target)
 
-# Train the classifier with the dataset
-classifier.fit(features, target)
 
-# Function to predict the species
 def predict_species(new_features):
     # The new_features should be a list of features
     prediction = classifier.predict([new_features])
     return prediction[0]
 
-# Example usage of the function
-# Replace the list with actual features to get the species prediction
-example_features = [2.4, 27.0, 0.17, 1.5]  # Example feature set
-print('The predicted Endangered Animals is: ',predict_species(example_features))
 
-plants_data = {
-    'Stem Width': [0.6, 0.05, 0.7],
-    'Stem Length': [22.5, 2.2, 15.5],
-    'Root Length': [10.2, 1.5, 2.5],
-    'Leaf Size': [0.08, 0.4, 0.1],
-    'Endangered Plants': ['White Pine Tree', 'Sunflower', 'Ebony']
-}
+example_features = [2.4, 27.0, 0.17, 1.5]
+print('The predicted Endangered Animals is: ', predict_species(example_features))
 
-df = pd.DataFrame(plants_data)
 
-# Define the features and the target variable
-plant_feature = df[['Stem Width', 'Stem Length', 'Root Length', 'Leaf Size']]
-plant_target = df['Endangered Plants']
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-# Initialize the decision tree classifier
-classifier = tree.DecisionTreeClassifier()
 
-# Train the classifier with the dataset
-classifier.fit(plant_feature, plant_target)
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    print("11111111111111111")
+    feature1 = request.form.get("feature1")
+    feature2 = request.form.get("feature2")
+    feature3 = request.form.get("feature3")
+    feature4 = request.form.get("feature4")
 
-# Function to predict the species
-def predict_plant(new_plant):
-    # The new_features should be a list of features
-    plant_prediction = classifier.predict([new_plant])
-    return plant_prediction[0]
+    print("feature1: ", feature1)
+    userfeatures = [feature1, feature2, feature3, feature4]
+    print("userfeatures:", userfeatures)
 
-# Example usage of the function
-# Replace the list with actual features to get the species prediction
-example_plants = [0.6,22.5,10.2,0.08]# Example feature set
-print('The predicted Endangered Plant is: ',predict_plant(example_plants))
+    # features = [0.6, 22.5, 10.2, 0.08]
+    print("222222222222222222", userfeatures)
+    prediction = classifier.predict([userfeatures])
+    modelPrediction = prediction[0]
+    # return jsonify({'Endangered Animals': prediction[0]})
+    return render_template("index.html",
+                           predictedAnimal=modelPrediction)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
