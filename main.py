@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, request, render_template
 from sklearn import tree
 import pandas as pd
 
@@ -7,11 +7,12 @@ classifier = tree.DecisionTreeClassifier()
 print('Biodiversity includes range of species that live in an area.')
 
 data = {
-    'Ear Size': [2.4, 0.13, 4.0],
-    'Body Size': [27.0, 2.0, 4.2],
-    'Eyes Size': [0.17, 0.02, 0.03],
-    'Heart Length': [1.5, 0.12, 0.2],
-    'Endangered Animals': ['Blue Whale', 'White Tailed Deer', 'Black Rhinos']
+    'Ear Size': [2.4, 0.13, 4.0, 0.05, 1.2, 0.17],
+    'Body Size': [27.0, 2.0, 4.2, 10.3, 20.1, 5.1],
+    'Eyes Size': [0.17, 0.02, 0.03, 0.15, 0.8, 0.12],
+    'Heart Length': [1.5, 0.12, 0.2, 2.1, 1.2, 2.4],
+    'Endangered Animals': ['Blue Whale', 'White Tailed Deer', 'Black Rhinos', 'Hawksbill turtle',
+                           'Sumatran elephant', 'Sunda tiger']
 }
 
 df = pd.DataFrame(data)
@@ -39,7 +40,6 @@ def home():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    print("11111111111111111")
     feature1 = request.form.get("feature1")
     feature2 = request.form.get("feature2")
     feature3 = request.form.get("feature3")
@@ -49,13 +49,10 @@ def predict():
     userfeatures = [feature1, feature2, feature3, feature4]
     print("userfeatures:", userfeatures)
 
-    # features = [0.6, 22.5, 10.2, 0.08]
-    print("222222222222222222", userfeatures)
     prediction = classifier.predict([userfeatures])
-    modelPrediction = prediction[0]
-    # return jsonify({'Endangered Animals': prediction[0]})
+    modelprediction = prediction[0]
     return render_template("index.html",
-                           predictedAnimal=modelPrediction)
+                           predictedAnimal=modelprediction)
 
 
 if __name__ == '__main__':
