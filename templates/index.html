@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodiversity Classifier</title>
-<link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+<title>Animal Predictor</title>
+<link rel="stylesheet" href="{{ url_for('static',    filename='css/style.css') }}">
 </head>
 <body>
 <div class="container">
-  <h1>Biodiversity Species Predictor</h1>
-  <form id="predictForm" action="/predict" method="POST">
-    <input type="number" id="f1" name="feature1" placeholder="Feature 1" required>
-    <input type="number" id="f2" name="feature2" placeholder="Feature 2" required>
-    <input type="number" id="f3" name="feature3" placeholder="Feature 3" required>
-    <input type="number" id="f4" name="feature4" placeholder="Feature 4" required>
-    <button type="submit">Predict Species</button>
+  <h1>Endangered Animal Predictor</h1>
+  <form id="predictForm" action="/predict" method="POST" >
+    <input inputmode="decimal" id="f1" name="feature1" placeholder="Ear Size" required>
+    <input inputmode="decimal" id="f2" name="feature2" placeholder="Body Size" required>
+    <input inputmode="decimal" id="f3" name="feature3" placeholder="Eyes Size" required>
+    <input inputmode="decimal" id="f4" name="feature4" placeholder="Heart Length" required>
+    <button type="submit">Predict Animal</button>
   </form>
   <div id="predictionResult">
 
