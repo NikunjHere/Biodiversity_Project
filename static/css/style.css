@@ -1,38 +1,113 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segue UI', Tahoma, Geneva, Verdana, Overpass, sans-serif;
+  background-color: #e9ece;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
+  text-align: center;
+  background: linear-gradient(270deg, green, darkorange);
+  margin: 0;
 }
 
 .container {
-  max-width: 600px;
-  margin: auto;
-  background: #fff;
+  max-width: 700px;
+  margin: 130px auto;
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: ;
+  border-radius: 10px;
 }
 
-input[type="number"] {
-  width: calc(50% - 10px);
+h1 {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 44px;
+}
+
+/* Increase the size of the form */
+form {
+  width: 90%; /* Increase the width of the form */
+  max-width: 800px; /* Set a maximum width for larger screens */
+  background-color: white;
+  margin: 0 auto; /* Center the form */
+  padding: 40px; /* Increase padding for more space inside the form */
+  font-size: 18px; /* Increase font size for better readability */
+  border-radius: 10px; /* Optional: Increase border-radius for rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional: Enhance shadow for depth */
+}
+
+/* Adjust the size of input fields */
+.form-group input[type='number'] {
+  padding: 15px; /* Increase padding for a larger input field */
+  font-size: 16px; /* Increase font size within the input field */
+}
+
+/* Adjust the size of the button */
+button {
+  padding: 15px 30px; /* Increase padding for a larger button */
+  font-size: 18px; /* Increase font size for the button text */
+}
+
+/* You may also want to increase the size of labels for consistency */
+.form-group label {
+  font-size: 18px; /* Increase font size for labels */
+}
+
+
+.form-group input[input mode="decimal"] {
+  width: 100%;
   padding: 10px;
-  margin: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-group input[input mode="decimal"]:focus {
+  border-color: #007bff;
+  outline: none;
+
 }
 
 button {
-  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  padding: 20px 15px;
   border: none;
-  background-color: #5cb85c;
-  color: white;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 18px;
 }
 
 button:hover {
-  background-color: #4cae4c;
+  background-color: #218838;
 }
 
 #predictionResult {
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 20px;
+      background-color: #f8f9fa;
+  border: 2px solid #ced4da;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+
+  form {
+    padding: 20px;
+  }
 }
