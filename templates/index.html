@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animal Predictor</title>
+<title>Endangered Animal Predictor</title>
 <link rel="stylesheet" href="{{ url_for('static',    filename='css/style.css') }}">
 </head>
 <body>
 <div class="container">
   <h1>Endangered Animal Predictor</h1>
+  <h2>Guide: Just enter the size value of their body features which will be taken as in centimeters</h2>
   <form id="predictForm" action="/predict" method="POST" >
-    <input inputmode="decimal" id="f1" name="feature1" placeholder="Ear Size" required>
-    <input inputmode="decimal" id="f2" name="feature2" placeholder="Body Size" required>
-    <input inputmode="decimal" id="f3" name="feature3" placeholder="Eyes Size" required>
-    <input inputmode="decimal" id="f4" name="feature4" placeholder="Heart Length" required>
+    <input inputmode="decimal" id="f1" name="feature1" placeholder="Ear Size (cm)" required>
+    <input inputmode="decimal" id="f2" name="feature2" placeholder="Body Size (cm)" required>
+    <input inputmode="decimal" id="f3" name="feature3" placeholder="Eyes Size (cm)" required>
+    <input inputmode="decimal" id="f4" name="feature4" placeholder="Heart Length (cm)" required>
     <button type="submit">Predict Animal</button>
   </form>
   <div id="predictionResult">
 
-    Endangered Animals : {{ predictedAnimal }}
+     Endangered Animals : { predictedAnimal }
+     The reason due to which { predictedAnimal } is becoming extinct is because of hunting them in a way that is negatively impacting the species, hunted for their skin, bones, and teeth, which are sold illegally on the black market etc.
   </div>
 </div>
 <script src="{{ url_for('static', filename='script.js') }}"></script>

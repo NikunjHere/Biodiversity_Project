@@ -4,7 +4,6 @@ import pandas as pd
 
 app = Flask(__name__)
 classifier = tree.DecisionTreeClassifier()
-print('Biodiversity includes range of species that live in an area.')
 
 data = {
     'Ear Size': [2.4, 0.13, 4.0, 0.05, 1.2, 0.17],
@@ -24,13 +23,13 @@ classifier.fit(data_features, target)
 
 
 def predict_species(new_features):
-    # The new_features should be a list of features
     prediction = classifier.predict([new_features])
     return prediction[0]
 
 
 example_features = [2.4, 27.0, 0.17, 1.5]
 print('The predicted Endangered Animals is: ', predict_species(example_features))
+
 
 
 @app.route("/")
@@ -50,10 +49,8 @@ def predict():
     print("userfeatures:", userfeatures)
 
     prediction = classifier.predict([userfeatures])
-    modelprediction = prediction[0]
-    return render_template("index.html",
-                           predictedAnimal=modelprediction)
-
+    modelprediction = prediction[0], 
+    return render_template("index.html", predictedAnimal=modelprediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
