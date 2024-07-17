@@ -6,58 +6,54 @@
 
 body {
   font-family: 'Segue UI', Tahoma, Geneva, Verdana, Overpass, sans-serif;
-  background-color: #e9ece;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  line-height: 1.5;
+  padding: 5px;
   text-align: center;
-  background: linear-gradient(270deg, green, darkorange);
-  margin: 0;
+  background: linear-gradient(270deg, green, darkorange, red);
 }
 
 .container {
-  max-width: 700px;
-  margin: 130px auto;
-  padding: 20px;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 0px;
   background: ;
   border-radius: 10px;
 }
 
 h1 {
   text-align: center;
-  color: black;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: 1000;
+  font-size: 50px;
+}
+
+h2 {
+  text-align: center;
+  color: #000000;
   margin-bottom: 20px;
   font-weight: 800;
-  font-size: 44px;
+  font-size:30px;
 }
 
-/* Increase the size of the form */
 form {
-  width: 90%; /* Increase the width of the form */
-  max-width: 800px; /* Set a maximum width for larger screens */
-  background-color: white;
-  margin: 0 auto; /* Center the form */
-  padding: 40px; /* Increase padding for more space inside the form */
-  font-size: 18px; /* Increase font size for better readability */
-  border-radius: 10px; /* Optional: Increase border-radius for rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional: Enhance shadow for depth */
+  width: 70%;
+  max-width: 800px;
+  background-color:  rgb(212, 225, 235);
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Adjust the size of input fields */
-.form-group input[type='number'] {
-  padding: 15px; /* Increase padding for a larger input field */
-  font-size: 16px; /* Increase font size within the input field */
-}
-
-/* Adjust the size of the button */
 button {
-  padding: 15px 30px; /* Increase padding for a larger button */
-  font-size: 18px; /* Increase font size for the button text */
+  padding: 15px 30px;
+  font-size: 18px;
 }
 
-/* You may also want to increase the size of labels for consistency */
 .form-group label {
-  font-size: 18px; /* Increase font size for labels */
+  font-size: 18px;
 }
 
 
@@ -80,8 +76,8 @@ button {
   width: 100%;
   padding: 20px 15px;
   border: none;
-  background-color: #28a745;
-  color: #fff;
+  background-color: #08c334;
+  color: #000000;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -89,7 +85,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color:#156a27;
 }
 
 #predictionResult {
@@ -97,11 +93,10 @@ button:hover {
   padding: 20px;
       background-color: #f8f9fa;
   border: 2px solid #ced4da;
-  border-radius: 10px;
-  font-size: 20px;
+  border-radius: 20px;
+  font-size: 25px;
 }
 
-/* Responsive styling */
 @media (max-width: 768px) {
   .container {
     margin: 10px;
