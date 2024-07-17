@@ -4,7 +4,6 @@ import pandas as pd
 
 app = Flask(__name__)
 classifier = tree.DecisionTreeClassifier()
-
 data = {
     'Ear Size': [2.4, 0.13, 4.0, 0.05, 1.2, 0.17],
     'Body Size': [27.0, 2.0, 4.2, 10.3, 20.1, 5.1],

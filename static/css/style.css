@@ -24,11 +24,19 @@ body {
 }
 
 h1 {
-  text-align: center;
+  text-align: top;
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
   font-weight: 800;
   font-size: 44px;
+}
+
+h2 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  font-weight: 550;
+  font-size:20px;
 }
 
 /* Increase the size of the form */
@@ -45,8 +53,8 @@ form {
 
 /* Adjust the size of input fields */
 .form-group input[type='number'] {
-  padding: 15px; /* Increase padding for a larger input field */
-  font-size: 16px; /* Increase font size within the input field */
+  padding: 20px; /* Increase padding for a larger input field */
+  font-size: 18px; /* Increase font size within the input field */
 }
 
 /* Adjust the size of the button */
@@ -94,7 +102,7 @@ button:hover {
 
 #predictionResult {
   margin-top: 10px;
-  padding: 20px;
+  padding: 14px;
       background-color: #f8f9fa;
   border: 2px solid #ced4da;
   border-radius: 10px;
