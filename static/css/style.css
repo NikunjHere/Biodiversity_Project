@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  text-align: top;
+  text-align: center;
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
   font-weight: 800;
@@ -39,11 +39,10 @@ h2 {
   font-size:20px;
 }
 
-/* Increase the size of the form */
 form {
   width: 90%; /* Increase the width of the form */
   max-width: 800px; /* Set a maximum width for larger screens */
-  background-color: rgb(236, 172, 172);
+  background-color:  rgb(212, 225, 235);
   margin: 0 auto; /* Center the form */
   padding: 40px; /* Increase padding for more space inside the form */
   font-size: 18px; /* Increase font size for better readability */
@@ -53,8 +52,8 @@ form {
 
 /* Adjust the size of input fields */
 .form-group input[type='number'] {
-  padding: 20px; /* Increase padding for a larger input field */
-  font-size: 18px; /* Increase font size within the input field */
+  padding: 15px; /* Increase padding for a larger input field */
+  font-size: 16px; /* Increase font size within the input field */
 }
 
 /* Adjust the size of the button */
@@ -97,12 +96,12 @@ button {
 }
 
 button:hover {
-  background-color: #156a27;
+  background-color:#156a27;
 }
 
 #predictionResult {
   margin-top: 10px;
-  padding: 14px;
+  padding: 20px;
       background-color: #f8f9fa;
   border: 2px solid #ced4da;
   border-radius: 10px;
